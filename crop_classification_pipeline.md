@@ -1,5 +1,4 @@
 # A Comprehensive Approach to Crop Classification Using Earth Observation Technologies and Machine Learning
-
 The first step is to install the necessary environment for everything to work on our personal computer. This tutorial assumes that the user has permissions to install software on a Windows machine.
 
 To begin, we need to install a version of Python that makes it easy to install packages. For this, we will use a tool called **Miniforge**. Miniforge is a minimal installer that sets up **conda** to use the free and open-source **conda-forge** channel by default. This simplifies the installation and management of Python and its libraries.
@@ -8,17 +7,17 @@ You can find Miniforge at the following link: [Miniforge GitHub](https://github.
 
 Look for the installer **Miniforge3-Windows-x86_64.exe**, which should match your operating system version. Click the link to download the file. Once the download is complete, you will find the file in your computer's Downloads folder.
 
-![](file:///assets/2024-10-17-13-17-22-image.png?msec=1734391222759)
+![](assets/2024-10-17-13-17-22-image.png)
 
 Once you have downloaded the **Miniforge3-Windows-x86_64.exe** file, which you will typically find in your Downloads folder, proceed to double-click on the file. Accept the terms and conditions of the **BSD-3-Clause** license. This license is beneficial because it allows users to use, modify, and redistribute the software flexibly, as long as attribution to the original authors is maintained. This promotes collaboration and open development, benefiting the user and developer community.
 
 After accepting the license terms, you will be asked whether you want to install for just your user account or for all users of the personal computer. Choose the option you prefer, then accept the default installation path and the remaining default options. Finally, press the **Install** button to begin the installation process.
 
-![](file:///assets/2024-10-17-13-28-20-image.png?msec=1734391222754)
+![](assets/2024-10-17-13-28-20-image.png)
 
 Upon completing the installation, a window will appear indicating that Python and Miniforge3 have been successfully installed on your computer. With this installation, you will have a set of utilities ready to use Python and to install the packages necessary for our tutorial. This will enable you to start working with Python effectively and access a wide range of libraries and tools that will facilitate your learning and project development.
 
-![](file:///assets/2024-10-17-13-32-09-image.png?msec=1734391222754)
+![](assets/2024-10-17-13-32-09-image.png)
 
 To use Python with Miniforge, we need to activate the command-line tool called **Miniforge Prompt**. To do this, follow these steps:
 
@@ -27,11 +26,11 @@ To use Python with Miniforge, we need to activate the command-line tool called *
 
 In this command-line window, we will perform the following installation steps.
 
-****
+**![](assets/2024-10-17-13-35-29-image.png)**
 
 Now, within this terminal, we will install a virtual working environment that will allow us to work on this project independently from other future projects. This helps avoid collisions and incompatibilities between the versions of various libraries.
 
-![](file:///assets/2024-10-17-14-42-18-image.png?msec=1734391222754)
+![](assets/2024-10-17-14-42-18-image.png)
 
 **Conda** environments are particularly useful because they allow you to create isolated spaces for different projects. This means you can have different versions of libraries and tools installed in each environment without them interfering with each other. This way, each project can have exactly what it needs, which simplifies development and avoids issues.
 
@@ -41,15 +40,15 @@ To create the environment, you need to execute the following command:
 conda create -n crop-classifier python=3.12
 ```
 
-![](file:///assets/2024-10-17-14-10-57-image.png?msec=1734391222760)
+![](assets/2024-10-17-14-10-57-image.png)
 
 This command will install an independent version of Python on your computer in an isolated environment, helping to minimize potential collisions between the libraries we will install. After executing the command, you will be prompted to confirm if you want to install the basic libraries. To proceed, press the letter "y" and then hit **Enter**.
 
-![](file:///assets/2024-10-17-14-35-52-image.png?msec=1734391222758)
+![](assets/2024-10-17-14-35-52-image.png)
 
-Once the environment is created, you can use the command `conda env list` to see the available environments.
+Once the environment is created, you can use the command `conda env list` to see the available environments. 
 
-![](file:///assets/2024-10-17-14-36-51-image.png?msec=1734391222753)
+![](assets/2024-10-17-14-36-51-image.png)
 
 To activate our new environment, we will use:
 
@@ -59,7 +58,7 @@ conda activate crop-classifier
 
 It’s important to clarify that the environment name is simply a label we can customize to our liking. What really matters is that it helps us identify the environment independently.
 
-![](file:///assets/2024-10-17-14-45-12-image.png?msec=1734391222758)
+![](assets/2024-10-17-14-45-12-image.png)
 
 If you want to exit an environment and return to the default environment, which is called **base**, you can simply run the following command in the same terminal:
 
@@ -86,54 +85,52 @@ Another important aspect of working in the terminal is the ability to move betwe
 Here’s a mini-tutorial on how to move between folders using terminal commands in Windows:
 
 1. **Move to a parent folder**: If you want to go back to the parent directory of your current location, use the following command:
-  
+
 2. ```bash
-  cd ..
-  ```
-  
-  This command will take you to the folder that contains the current folder.
-  
+   cd ..
+   ```
+   
+   This command will take you to the folder that contains the current folder.
+
 3. **Move to a specific folder**: If you want to go to a specific folder, like **C:\crop-tutorial**, you can use:
-  
-  ```bash
-  cd C:\crop-tutorial
-  ```
-  
-  Make sure the path you type is correct. This command will change your current location to **C:\crop-tutorial**.
-  
+   
+   ```bash
+   cd C:\crop-tutorial
+   ```
+   
+   Make sure the path you type is correct. This command will change your current location to **C:\crop-tutorial**.
+
 4. **Create a new folder**: If you haven’t created the folder yet, you can do so from the terminal with:
-  
-  ```bash
-  mkdir C:\crop-tutorial
-  ```
-  
-  This will create a new folder named **crop-tutorial** in the C drive.
-  
+   
+   ```bash
+   mkdir C:\crop-tutorial
+   ```
+   
+   This will create a new folder named **crop-tutorial** in the C drive.
+
 5. **View the contents of the current folder**: To see what files and folders are in your current location, you can use:
-  
-  ```bash
-  dir
-  ```
-  
-  This will show you a list of files and folders in your current directory.
-  
+   
+   ```bash
+   dir
+   ```
+   
+   This will show you a list of files and folders in your current directory.
 
 ### Summary
 
 So, every time you open the **Miniforge** terminal, follow these steps:
 
 1. Use `cd` to navigate to your working folder:
-  
-  ```bash
-  cd C:\crop-tutorial
-  ```
-  
+   
+   ```bash
+   cd C:\crop-tutorial
+   ```
+
 2. Activate the environment you need:
-  
-  ```bash
-  conda activate crop-classifier
-  ```
-  
+   
+   ```bash
+   conda activate crop-classifier
+   ```
 
 By following these steps, you’ll ensure you are in the right place to start working on your project, making the learning and development process smoother and more organized. Don’t hesitate to experiment with these commands and familiarize yourself with navigating the terminal!
 
@@ -141,46 +138,45 @@ By following these steps, you’ll ensure you are in the right place to start wo
 
 Every time you start a new work session (for example, after restarting your computer), you'll need to activate your Conda environment and navigate to the correct directory. To do this, open a new Anaconda Prompt terminal:
 
-![](file:///assets/2024-10-17-15-23-56-image.png?msec=1734391222772)
+![](assets/2024-10-17-15-23-56-image.png)
 
 1. **Activate Your Environment**:
-  
-  - To activate your environment, type the following command:
-    
-    ```bash
-    activate crop-classifier
-    ```
-    
-  - This changes your terminal to the **(crop-classifier)** environment.
-    
+   
+   - To activate your environment, type the following command:
+     
+     ```bash
+     activate crop-classifier
+     ```
+   
+   - This changes your terminal to the **(crop-classifier)** environment.
+
 2. **Navigate to the C Drive**:
-  
-  - Move to the C drive by entering:
-    
-    ```bash
-    cd C:\
-    ```
-    
+   
+   - Move to the C drive by entering:
+     
+     ```bash
+     cd C:\
+     ```
+
 3. **Create the Directory**:
-  
-  - If you haven’t created the directory yet, make it with:
-    
-    ```bash
-    mkdir crop-tutorial
-    ```
-    
+   
+   - If you haven’t created the directory yet, make it with:
+     
+     ```bash
+     mkdir crop-tutorial
+     ```
+
 4. **Change to the Directory**:
-  
-  - Finally, navigate into your new directory:
-    
-    ```bash
-    cd crop-tutorial
-    ```
-    
+   
+   - Finally, navigate into your new directory:
+     
+     ```bash
+     cd crop-tutorial
+     ```
 
 By following these steps, you will be set up in the **crop-tutorial** directory, ready to continue your project!
 
-![](file:///assets/2024-10-17-15-25-48-image.png?msec=1734391222759)
+![](assets/2024-10-17-15-25-48-image.png)
 
 ### Installing Necessary Libraries for Your Project
 
@@ -207,22 +203,24 @@ conda install -c conda-forge numpy joblib rsgislib gdal libgdal-kea geos kealib 
 #### Next Steps
 
 1. **Execute the Command**:
-  
-  - Type or paste the above command into your terminal and press **Enter**.
+   
+   - Type or paste the above command into your terminal and press **Enter**.
+
 2. **Wait for Installation**:
-  
-  - The installation process may take a few minutes, depending on your internet connection and the number of packages being installed.
+   
+   - The installation process may take a few minutes, depending on your internet connection and the number of packages being installed.
+
 3. **Respond to Prompts**:
-  
-  - After a short while, you will see a prompt asking if you want to proceed with the installation of the requested libraries. To continue, type **"y"** and press **Enter**.
+   
+   - After a short while, you will see a prompt asking if you want to proceed with the installation of the requested libraries. To continue, type **"y"** and press **Enter**.
 
 Once you confirm, Conda will begin installing all the specified libraries in your environment. This will equip you with all the tools necessary for your project, making it easier to handle data, perform analysis, and visualize results.
 
-![](file:///assets/2024-10-17-15-31-46-image.png?msec=1734391222758)
+![](assets/2024-10-17-15-31-46-image.png) 
 
 ### Continuing the Installation: Understanding Pip
 
-Now that you have installed the essential libraries using Conda, we will introduce another important tool called **pip**.
+Now that you have installed the essential libraries using Conda, we will introduce another important tool called **pip**. 
 
 #### What is Pip?
 
@@ -255,11 +253,12 @@ These libraries are often used in machine learning workflows, particularly for t
 #### Next Steps
 
 1. **Execute the Command**:
-  
-  - Type or paste the above command into your terminal and press **Enter**.
+   
+   - Type or paste the above command into your terminal and press **Enter**.
+
 2. **Wait for Installation**:
-  
-  - Similar to the previous installations, this process may take a few moments. Pip will download and install the packages you specified.
+   
+   - Similar to the previous installations, this process may take a few moments. Pip will download and install the packages you specified.
 
 Once this command is executed, you'll have access to additional powerful tools that will further enhance your project’s capabilities!
 
@@ -269,28 +268,27 @@ Congratulations! You have successfully set up your **crop-classifier** environme
 
 #### Important Points to Remember:
 
-1. **One-Time Setup**: The procedure for installing the environment and libraries is done **only once per computer**. Once you complete this setup, you don’t have to reinstall everything again, even if you turn off your computer.
-  
+1. **One-Time Setup**: The procedure for installing the environment and libraries is done **only once per computer**. Once you complete this setup, you don’t have to reinstall everything again, even if you turn off your computer. 
+
 2. **Environment Persistence**: Your created environment and installed libraries will remain intact, so you can always return to them when you need to work on your project again.
-  
+
 3. **Getting Started**: Whenever you want to continue your work:
-  
-  - Open **Miniforge Prompt**.
-    
-  - Navigate to your working directory (e.g., `C:\crop-tutorial`).
-    
-  - Activate your environment with the command:
-    
-    ```bash
-    activate crop-classifier
-    ```
-    
+   
+   - Open **Miniforge Prompt**.
+   
+   - Navigate to your working directory (e.g., `C:\crop-tutorial`).
+   
+   - Activate your environment with the command:
+     
+     ```bash
+     activate crop-classifier
+     ```
 
 By following these steps, you will be ready to dive back into your project without any hassle!
 
 ### Introducing Jupyter Lab
 
-Now that you have your environment set up and the necessary libraries installed, it’s time to introduce **Jupyter Lab**.
+Now that you have your environment set up and the necessary libraries installed, it’s time to introduce **Jupyter Lab**. 
 
 #### What is Jupyter Lab?
 
@@ -301,32 +299,32 @@ Now that you have your environment set up and the necessary libraries installed,
 To start using Jupyter Lab, follow these simple steps:
 
 1. **Ensure Your Environment is Active**:
-  
-  - Make sure you are in the **crop-classifier** environment and your working directory (e.g., `C:\crop-tutorial`) is set.
+   
+   - Make sure you are in the **crop-classifier** environment and your working directory (e.g., `C:\crop-tutorial`) is set.
+
 2. **Run the Command**:
-  
-  - In your terminal, type the following command and press **Enter**:
-    
-    ```bash
-    jupyter lab
-    ```
-    
+   
+   - In your terminal, type the following command and press **Enter**:
+     
+     ```bash
+     jupyter lab
+     ```
+
 3. **Open Your Browser**:
-  
-  - After executing the command, a new browser window should automatically open, directing you to the following URL:
-    
-    ```
-    http://localhost:8888/lab
-    ```
-    
-  - If the browser doesn’t open automatically, you can manually enter this URL into your browser's address bar.
-    
+   
+   - After executing the command, a new browser window should automatically open, directing you to the following URL:
+     
+     ```
+     http://localhost:8888/lab
+     ```
+   
+   - If the browser doesn’t open automatically, you can manually enter this URL into your browser's address bar.
 
 #### Your Workspace
 
 From this point on, **Jupyter Lab** will be your main workspace. You can create new notebooks, write code, visualize data, and document your findings all in one place. This integrated environment makes it easy to manage your projects and collaborate with others.
 
-![](file:///assets/2024-10-17-15-54-39-image.png?msec=1734391222759)
+![](assets/2024-10-17-15-54-39-image.png)
 
 ### Exploring Jupyter Lab with a Simple Example
 
@@ -348,26 +346,26 @@ Whether you’re working on data science, machine learning, or simple coding pro
 Let’s create a basic Python notebook and run your first piece of code: **"Hello, World!"**.
 
 1. **Create a New Notebook**:
-  
-  - In Jupyter Lab, click the **"Python 3"** option under the **Notebook** section. This will open a new notebook where you can start writing Python code.
+   
+   - In Jupyter Lab, click the **"Python 3"** option under the **Notebook** section. This will open a new notebook where you can start writing Python code.
+
 2. **Write Your Code**:
-  
-  - In the first cell of the notebook, type the following code:
-    
-    ```python
-    print("Hello, World!")
-    ```
-    
+   
+   - In the first cell of the notebook, type the following code:
+     
+     ```python
+     print("Hello, World!")
+     ```
+
 3. **Run the Code**:
-  
-  - To execute the code, press **Shift + Enter** or click the **Run** button (the triangle icon) at the top of the notebook.
-    
-  - You’ll see the output just below the code cell, which should display:
-    
-    ```
-    Hello, World!
-    ```
-    
+   
+   - To execute the code, press **Shift + Enter** or click the **Run** button (the triangle icon) at the top of the notebook.
+   
+   - You’ll see the output just below the code cell, which should display:
+     
+     ```
+     Hello, World!
+     ```
 
 This is your first program, and it shows how easy it is to run Python code within Jupyter Lab.
 
@@ -380,9 +378,9 @@ Now that you’ve run your first code, here’s a glimpse of what Jupyter Lab ca
 - **Interactive Visualizations**: Integrate libraries like `matplotlib`, `seaborn`, or `plotly` to create beautiful charts and graphs.
 - **Data Analysis**: Load and manipulate large datasets with libraries like `pandas` and `numpy`, all within the same interface.
 
-Jupyter Lab is perfect for interactive coding, experimenting, and sharing your projects.
+Jupyter Lab is perfect for interactive coding, experimenting, and sharing your projects. 
 
-![](file:///assets/2024-10-17-16-20-24-image.png?msec=1734391222754)
+![](assets/2024-10-17-16-20-24-image.png)
 
 ### Note on Jupyter Notebooks (.ipynb Files)
 
@@ -390,48 +388,49 @@ When you run a Jupyter Lab session, the notebooks you create are automatically s
 
 These files store your code, outputs, and any markdown text you’ve written, making it easy to continue your work later. Importantly, these notebooks persist even if you restart your computer or close the terminal. So, when you come back to your project, your notebook will still be there.
 
-![](file:///assets/2024-10-17-16-21-35-image.png?msec=1734391222758)
+![](assets/2024-10-17-16-21-35-image.png)
 
 ### Authenticating Google Earth Engine in Jupyter Lab
 
-Once we've set up our Jupyter environment, it's time to connect to Google Earth Engine (GEE). his section guides you through connecting your JupyterLab environment to Google Earth Engine (GEE). This process involves authentication and initialization within your notebook.
+Once we've set up our Jupyter environment, it's time to connect to Google Earth Engine (GEE). his section guides you through connecting your JupyterLab environment to Google Earth Engine (GEE).  This process involves authentication and initialization within your notebook.
 
-1. **Initiate the Authentication Process:** Begin by running the following code in a new JupyterLab cell:
-  
-  ```python
-  import ee
-  ee.Authenticate()
-  ee.Initialize()
-  ```
-  
-2. **Open the Authentication URL:** After executing the code, you'll receive a URL in the output along with a message: "To authorize access needed by Earth Engine, open the following URL in a web browser and follow the instructions."
-  
+1. **Initiate the Authentication Process:**  Begin by running the following code in a new JupyterLab cell:
+   
+   ```python
+   import ee
+   ee.Authenticate()
+   ee.Initialize()
+   ```
+
+2. **Open the Authentication URL:**  After executing the code, you'll receive a URL in the output along with a message: "To authorize access needed by Earth Engine, open the following URL in a web browser and follow the instructions."
+
 3. Click the provided URL. This will open a new browser tab directing you to the GEE authentication page.
-  
-4. **Sign in with Your Google Account:** Log in using the Google account you want to associate with GEE. ![](file:///assets/2024-10-17-16-41-49-image.png?msec=1734391222757) 
-  
+
+4. **Sign in with Your Google Account:**  Log in using the Google account you want to associate with GEE. ![](assets/2024-10-17-16-41-49-image.png)
+
 5. **Project Selection/Creation:**
-  
-  - **Existing Project:** If you have an existing Google Cloud Platform project you'd like to use, select it from the list.
-  - **New Project:** If you don't have a project, click "CREATE A NEW CLOUD PROJECT." You can usually accept the default project name and settings. Click "SELECT" after creating the project. ![](file:///assets/2024-10-17-16-44-14-image.png?msec=1734391222759) 
+   
+   * **Existing Project:** If you have an existing Google Cloud Platform project you'd like to use, select it from the list.
+   * **New Project:** If you don't have a project, click "CREATE A NEW CLOUD PROJECT." You can usually accept the default project name and settings. Click "SELECT" after creating the project. ![](assets/2024-10-17-16-44-14-image.png)
+
 6. **Earth Engine Registration (If Necessary):** You might see a message indicating your project isn't registered for Earth Engine. If so:
-  
-  - Click the provided link to register your project.
-  - Choose the "unpaid" usage option.
-  - Select a project type (e.g., "Academia & Research"). ![](file:///assets/2024-10-17-16-49-43-image.png?msec=1734391222759) 
-  - Click "NEXT," then "CONFIRM" to finalize registration.
-7. **Generate an Authorization Token:** Once your project is set up (or if it was already registered), you'll see the Earth Engine Code Editor briefly. Return to the browser tab where you clicked the initial authentication URL. Now, click the "Generate Token" button.
-  
-8. **Grant Permissions:** You'll be prompted to confirm your Google account again and authorize permissions for GEE. Ensure you grant all necessary permissions for JupyterLab to access GEE.![](file:///assets/2024-10-17-16-53-32-image.png?msec=1734391222783)
-  
-9. **Copy and Paste the Token:** An authorization token (a long string of characters) will be displayed. Copy this token. Return to your JupyterLab notebook and paste it into the prompt waiting for the token. Press Enter.![](file:///assets/2024-10-17-17-30-22-image.png?msec=1734391222774)
-  
-10. **Confirmation:** If successful, you'll see the following message in your JupyterLab cell:![](file:///assets/2024-10-17-16-55-49-image.png?msec=1734391222757)
-  
-  ```
-  Successfully saved authorization token.
-  ```
-  
+   
+   * Click the provided link to register your project.
+   * Choose the "unpaid" usage option.
+   * Select a project type (e.g., "Academia & Research"). ![](assets/2024-10-17-16-49-43-image.png)
+   * Click "NEXT," then "CONFIRM" to finalize registration.
+
+7. **Generate an Authorization Token:**  Once your project is set up (or if it was already registered), you'll see the Earth Engine Code Editor briefly.  Return to the browser tab where you clicked the initial authentication URL. Now, click the "Generate Token" button.
+
+8. **Grant Permissions:** You'll be prompted to confirm your Google account again and authorize permissions for GEE.  Ensure you grant all necessary permissions for JupyterLab to access GEE.![](assets/2024-10-17-16-53-32-image.png)
+
+9. **Copy and Paste the Token:** An authorization token (a long string of characters) will be displayed. Copy this token. Return to your JupyterLab notebook and paste it into the prompt waiting for the token. Press Enter.![](assets/2024-10-17-17-30-22-image.png)
+
+10. **Confirmation:** If successful, you'll see the following message in your JupyterLab cell:![](assets/2024-10-17-16-55-49-image.png)
+    
+    ```
+    Successfully saved authorization token.
+    ```
 ## Downloading and Processing Satellite Imagery with Google Earth Engine and Python
 
 This section demonstrates how to download and process both optical (Landsat/Sentinel-2) and radar (Sentinel-1) satellite imagery from Google Earth Engine (GEE) using Python. We'll use the Yaqui Valley in Sonora, Mexico, as our study area, but the process can be easily adapted to other regions.
