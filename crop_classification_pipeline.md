@@ -891,4 +891,4 @@ nombre_pipeline = "Extra-Trees para Yaqui"
 fit_and_test(train_data, test_data, klass, exported_pipeline, nombre_pipeline)
 ```
 
-This concludes the Python script for comprehensive crop classification using Earth observation technologies and machine learning. Each step of the process has been described in detail with corresponding code blocks.
+This concludes the Python script for comprehensive crop classification using Earth observation technologies and machine learning. 
